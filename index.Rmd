@@ -43,11 +43,6 @@ cat(header_aboutme)
 ```{r experience}
 experience$dates <- gsub("\'", "20", experience$dates) 
 experience$dates <- gsub("-", " - ", experience$dates) 
-
-experience$description_short <- sapply(
-  strsplit(experience$description, ":"), 
-  function(x) x[1]
-  )
   
 experience$description_formatted <- 
     with(
