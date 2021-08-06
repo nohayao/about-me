@@ -42,7 +42,7 @@ cat(header_aboutme)
 
 ```{r experience}
 experience$dates <- gsub("\'", "20", experience$dates) 
-experience$dates <- gsub("-", " - ", experience$dates) 
+experience$dates <- gsub("-", " - ", experience$dates)
   
 experience$description_formatted <- 
     with(
@@ -81,7 +81,7 @@ cat(paste(education$description_formatted, collapse = "<br><br>"))
 languages$description_formatted <-
   with(
     languages,
-    paste0("*", language, "*: ", level
+    paste0("*", language, "* : ", level
     )
   )
 
