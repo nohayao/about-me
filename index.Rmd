@@ -1,0 +1,99 @@
+---
+title: "About Me"
+image: "assets/noha.png"
+color1: "#5A59A3"
+color2: "#C66060"
+angle: 130
+links:
+  - label: E-mail
+    url: "mailto:nohayao@gmail.com"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/nohayao"
+  - label: Full CV
+    url: "assets/nohayao-cv-2021.pdf"
+output:
+  postcards::onofre
+---
+ 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, results = "asis")
+```
+
+```{r data}
+data_source_root <- "data"
+
+experience <- read.csv(paste0(data_source_root, "/", "experience.csv"))
+education <- read.csv(paste0(data_source_root, "/", "education.csv"))
+languages <- read.csv(paste0(data_source_root, "/", "languages.csv"))
+header <- read.csv(paste0(data_source_root, "/", "header.csv"))
+header_aboutme <- header[header$parameter == "aboutme", "value"]
+```
+
+```{r aboutme}
+cat(header_aboutme)
+```
+
+::::: {style="display: grid; grid-template-columns: 4fr 3fr; grid-column-gap: 5px;"}
+
+:::: {style="display: grid; grid-template-rows: auto; align-content: space-between"}
+
+::: {}
+### Experience
+
+```{r experience}
+experience$dates <- gsub("\'", "20", experience$dates) 
+experience$dates <- gsub("-", " - ", experience$dates) 
+
+experience$description_short <- sapply(
+  strsplit(experience$description, ":"), 
+  function(x) x[1]
+  )
+  
+experience$description_formatted <- 
+    with(
+      experience,
+      paste0(
+        "**", role, "**<br>", dates, "<br>",
+        "*", org, "*<br>", place))
+
+cat(paste(experience$description_formatted, collapse = "<br><br>"))
+```
+:::
+
+::::
+
+:::: {style="display: grid; grid-template-rows: auto auto auto; align-content: space-between"}
+
+::: {}
+### Education
+
+```{r education}
+education$description_formatted <- 
+    with(
+      education,
+      paste0(
+        "**", degree, "**<br>", dates, "<br>",
+        "*", institution, "*"))
+
+cat(paste(education$description_formatted, collapse = "<br><br>"))
+```
+:::
+
+::: {}
+### Languages
+
+```{r languages}
+languages$description_formatted <-
+  with(
+    languages,
+    paste0("*", language, "*: ", level
+    )
+  )
+
+cat(paste(languages$description_formatted, collapse = "<br>"))
+```
+:::
+
+::::
+
+:::::
