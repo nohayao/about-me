@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "Noha YAO"
 image: "assets/noha.png"
 color1: "#5A59A3"
 color2: "#C66060"
