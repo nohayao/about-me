@@ -19,6 +19,12 @@ output:
 knitr::opts_chunk$set(echo = FALSE, results = "asis")
 ```
 
+```{css}
+h3 {
+   text-decoration: underline;
+}
+```
+
 ```{r data}
 data_source_root <- "data"
 
