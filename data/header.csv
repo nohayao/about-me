@@ -12,4 +12,5 @@ twitter,"tbd"
 github,"tbd"
 linkedin,"tbd"
 date,"`r format(Sys.time(), '%B %Y')`"
-aboutme,"Multilingual SCRUM Professional<br>12 years experience &middot; 2 Masters<br>Information Systems and Engineering<br>University of Illinois at Chicago"
+aboutme,"Multilingual&nbsp;SCRUM&nbsp;Professional &middot; 12&nbsp;years&nbsp;experience &middot; 2&nbsp;Masters &middot; Information&nbsp;Systems&nbsp;and&nbsp;Engineering &middot; University&nbsp;of&nbsp;Illinois&nbsp;at&nbsp;Chicago"
+

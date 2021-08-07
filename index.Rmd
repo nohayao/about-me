@@ -87,7 +87,7 @@ cat(paste(education$description_formatted, collapse = "<br><br>"))
 languages$description_formatted <-
   with(
     languages,
-    paste0("*", language, "* : ", level
+    paste0("*", language, "*&nbsp;:&nbsp;", level
     )
   )
 
